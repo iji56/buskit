@@ -1,0 +1,71 @@
+{
+  "project_info": {
+    "project_number": "48053070020",
+    "firebase_url": "https://buskit-2abe3-default-rtdb.firebaseio.com",
+    "project_id": "buskit-2abe3",
+    "storage_bucket": "buskit-2abe3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:48053070020:android:baa0175f34156d0a320191",
+        "android_client_info": {
+          "package_name": "com.buskit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "48053070020-e7iiaan1837bnr028mp0i9cm3qf10p2c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.buskit",
+            "certificate_hash": "2b1c7e3b8f68ca81264a6c5159cb00f51dc0edc8"
+          }
+        },
+        {
+          "client_id": "48053070020-g37v2iao4a0tq8ha5aoq59ktq4baue5f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.buskit",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "48053070020-oessfvlo7dtemcu47obb5ltc5pjuqop6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.buskit",
+            "certificate_hash": "417ce49222f3d8b136d1e5a5e1623a6d1c15670c"
+          }
+        },
+        {
+          "client_id": "48053070020-pta9rs0j39e9tibnl62hos5dl37s824c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsSxidf_lv1PrHe1ZBGw3HxgCPuKk4mpY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "48053070020-pta9rs0j39e9tibnl62hos5dl37s824c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "48053070020-k7fa9h27rsmf6htpl8dqk6i57gp4ta37.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.buskit"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

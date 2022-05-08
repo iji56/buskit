@@ -1,0 +1,9 @@
+export const ADD = 'ADD';
+export const ADDUSER = 'ADD_USER';
+export const REMOVEUSER = 'REMOVE_USER';
+export const ADDEVENT = 'ADD_EVENT';
+export const REMOVEEVENT = 'REMOVE_EVENT';
+export const ADDEVENTID = 'ADD_EVENT_ID';
+export const REMOVEEVENTID = 'REMOVE_EVENT_ID';
+export const ADDFIREBASE = 'ADD_FIREBASE';
+export const REMOVEFIREBASE = 'REMOVE_FIREBASE';

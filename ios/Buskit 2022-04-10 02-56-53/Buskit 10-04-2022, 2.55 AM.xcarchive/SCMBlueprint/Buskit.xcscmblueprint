@@ -1,0 +1,26 @@
+{
+  "DVTSourceControlWorkspaceBlueprintLocationsKey" : {
+    "E47C1ACB2B3A1B2F4C526866008B748C4E4D111A" : {
+      "DVTSourceControlBranchIdentifierKey" : "main",
+      "DVTSourceControlLocationRevisionKey" : "f436ceeb431a8cd16286778e9cb2cf3c15fc6bc5",
+      "DVTSourceControlBranchOptionsKey" : 4,
+      "DVTSourceControlBranchRemoteNameKey" : "origin",
+      "DVTSourceControlWorkspaceBlueprintLocationTypeKey" : "DVTSourceControlBranch"
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E47C1ACB2B3A1B2F4C526866008B748C4E4D111A",
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0B08E6E7-06C0-44C0-B794-DFA320CE9BA3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E47C1ACB2B3A1B2F4C526866008B748C4E4D111A" : "buskit\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Buskit",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ios\/Buskit.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Abdul-920\/buskit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E47C1ACB2B3A1B2F4C526866008B748C4E4D111A"
+    }
+  ]
+}

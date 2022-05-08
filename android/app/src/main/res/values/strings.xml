@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Busk It</string>
+    <string name="facebook_app_id">177351247702969</string>
+    <string name="fb_login_protocol_scheme">fb177351247702969</string>
+
+    <!-- <string name="facebook_app_id">632743157440943</string>
+    <string name="fb_login_protocol_scheme">fb632743157440943</string> -->
+
+    <string name="google_key">AIzaSyAfhlpZJHihg9MsRMfJlVzaJiffG7FZD3A</string>
+<!--     <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>-->
+</resources>

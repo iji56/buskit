@@ -1,0 +1,125 @@
+import {StyleSheet, Dimensions, Platform} from 'react-native';
+import Colors from '../../Res/Colors';
+import Fonts from '../../Res/Fonts';
+
+const IS_IOS = Platform.OS === 'ios';
+const IS_ANDROID = Platform.OS === 'android';
+const {width: viewportWidth, height: viewportHeight} = Dimensions.get('window');
+
+export default StyleSheet.create({
+  viewcontainer: {
+    flex: 1,
+    backgroundColor: Colors.theme,
+  },
+  headerRowStyle: {
+    flexDirection: 'row',
+    height: IS_IOS ? 44 : 55,
+    backgroundColor: Colors.theme,
+  },
+  backImageBack: {
+    height: 30,
+    width: 30,
+    marginHorizontal: 15,
+    backgroundColor: 'transparent',
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignSelf: 'center',
+  },
+  backImageStyle: {
+    height: 20,
+    width: 20,
+    alignSelf: 'center',
+    tintColor: Colors.white,
+  },
+  titleText: {
+    flex: 1,
+    fontSize: 20,
+    alignSelf: 'center',
+    textAlign: 'center',
+    fontFamily: Fonts.MontserratMedium,
+    color: Colors.white,
+  },
+  viewStyle: {
+    flex: 1,
+    backgroundColor: Colors.offWhite,
+  },
+
+  emptyView: {
+    height: viewportHeight - 50,
+    width: viewportWidth,
+    justifyContent: 'center',
+    backgroundColor: Colors.white,
+  },
+  ImageStyle: {
+    height: 100,
+    width: 100,
+    alignSelf: 'center',
+    tintColor: Colors.grey,
+  },
+  EmptyText: {
+    fontSize: 14,
+    marginTop: 15,
+    fontFamily: Fonts.MontserratRegular,
+    textAlign: 'center',
+    color: Colors.grey,
+  },
+
+  rowContainer: {
+    flexDirection: 'row',
+    width: viewportWidth - 30,
+    marginVertical: 10,
+  },
+  rowImageView: {
+    height: 90,
+    width: 120,
+    borderRadius: 10,
+  },
+  detailViewStyle: {
+    flex: 1,
+    marginEnd: 15,
+    justifyContent: 'center',
+  },
+  nameTextStyle: {
+    fontSize: 15,
+    fontFamily: Fonts.MontserratBold,
+    color: Colors.black,
+    marginBottom: 10,
+  },
+  descTextStyle: {
+    fontSize: 14,
+    fontFamily: Fonts.MontserratRegular,
+    color: Colors.black,
+    marginVertical: 5,
+  },
+  detailTextStyle: {
+    fontSize: 12,
+    fontFamily: Fonts.MontserratMedium,
+    color: Colors.grey,
+  },
+  rowIconStyle: {
+    height: 15,
+    width: 15,
+    alignSelf: 'center',
+    tintColor: Colors.theme,
+  },
+
+  dividerViewStyle: {
+    height: 1,
+    backgroundColor: Colors.offgrey,
+  },
+
+  btnContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    height: 45,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
+    backgroundColor: Colors.theme,
+  },
+  btnText: {
+    fontSize: 15,
+    fontFamily: Fonts.MontserratMedium,
+    alignSelf: 'center',
+    color: Colors.white,
+  },
+});
