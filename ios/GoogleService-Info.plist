@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>48053070020-k7fa9h27rsmf6htpl8dqk6i57gp4ta37.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.48053070020-k7fa9h27rsmf6htpl8dqk6i57gp4ta37</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>48053070020-e7iiaan1837bnr028mp0i9cm3qf10p2c.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDjfoZeSyVumVgs8ioqghDaoAkFIVYIOuY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>48053070020</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.buskit</string>
+	<key>PROJECT_ID</key>
+	<string>buskit-2abe3</string>
+	<key>STORAGE_BUCKET</key>
+	<string>buskit-2abe3.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:48053070020:ios:3c97ba42f18ab103320191</string>
+	<key>DATABASE_URL</key>
+	<string>https://buskit-2abe3-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
