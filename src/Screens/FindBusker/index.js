@@ -820,6 +820,7 @@ const FindBusker = props => {
         </ScrollView>
       </KeyboardAvoidingView>
       <DateTimePickerModal
+        modalStyleIOS={{color: 'red'}}
         isVisible={dateVisibility}
         mode="date"
         minimumDate={
@@ -839,7 +840,7 @@ const FindBusker = props => {
         onConfirm={handleDateConfirm}
         onCancel={hideDateDialog}
         headerTextIOS={dateType == 1 ? 'Pick Start Date' : 'Pick End Date'}
-        // textColor={Colors.black}
+        textColor={Colors.black}
         isDarkModeEnabled={false}
       />
 

@@ -8,8 +8,11 @@ import {
   TouchableOpacity,
   StatusBar,
   AsyncStorage,
-  SafeAreaView
+  SafeAreaView,
+  ActivityIndicator,
 } from 'react-native';
+import WebView from 'react-native-webview';
+
 import styles from './styles';
 import Colors from '../../Res/Colors';
 import Strings from '../../Res/String';
@@ -29,10 +32,11 @@ const Home = props => {
   const {title} = props.route.params;
 
   const [isLoading, setLoading] = useState(false);
+  const ref = useRef(null);
   const toast = useRef(null);
 
   useEffect(() => {
-    TermsApi();
+    // TermsApi();
   }, []);
 
   //******************** Hit TermsApi Api *******************
@@ -41,7 +45,7 @@ const Home = props => {
     console.log('ApiCall', constants.baseUrl + constants.api.cmsPage);
     timeout(
       10000,
-      fetch(constants.baseUrl + constants.api.cmsPage + '?page_id='+action, {
+      fetch(constants.baseUrl + constants.api.cmsPage + '?page_id=' + action, {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -91,6 +95,18 @@ const Home = props => {
       });
   };
 
+  const ActivityIndicatorLoadingView = () => {
+    //making a view to show to while loading the webpage
+    return (
+      <View style={{...commonStyles.WebViewStyle, paddingBottom: 150}}>
+        <ActivityIndicator size="large" color={Colors.theme} />
+        <Text style={{...commonStyles.LoadingTextStyle, color: 'white'}}>
+          Loading...
+        </Text>
+      </View>
+    );
+  };
+
   return (
     <SafeAreaView style={styles.viewcontainer}>
       <CustomStatusBar color={Colors.theme} />
@@ -110,28 +126,25 @@ const Home = props => {
         <Text style={styles.titleText}>{title}</Text>
         <TouchableOpacity style={styles.backImageBack} />
       </View>
-      <View style={styles.viewStyle}>
-        <ScrollView
-          style={styles.scrollContainer}
-          showsVerticalScrollIndicator={false}
-          bounces={false}
-          keyboardShouldPersistTaps={'handled'}
-          contentContainerStyle={{paddingTop: 15}}
-          overScrollMode="never">
-          {/* <Text style={styles.headText}>{'Our Story'}</Text> */}
-          <Text style={styles.descText}>{desc}</Text>
-        </ScrollView>
-      </View>
-      <Toast
-        ref={toast}
-        style={commonStyles.toastStyle}
-        textStyle={commonStyles.toastTextStyle}
+
+      <WebView
+        // Webview Refernce
+        ref={ref}
+        // Webview Style
+        style={commonStyles.WebViewStyle}
+        //Loading URL
+        source={{uri: 'https://busk-it.com/policy/'}}
+        //Navigation Change Interface
+        // onNavigationStateChange={_onNavigationStateChange.bind(this)}
+        //Enable Javascript support
+        javaScriptEnabled
+        //For the Cache
+        domStorageEnabled
+        //View to show while loading the webpage
+        renderLoading={ActivityIndicatorLoadingView}
+        //Want to show the view or not
+        startInLoadingState
       />
-      {isLoading && (
-        <View style={commonStyles.loaderStyle}>
-          <DotIndicator color={Colors.theme} size={15} count={4} />
-        </View>
-      )}
     </SafeAreaView>
   );
 };

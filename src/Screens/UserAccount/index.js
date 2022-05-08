@@ -17,7 +17,7 @@ import styles from './styles';
 import Colors from '../../Res/Colors';
 import Strings from '../../Res/String';
 import {Switch} from 'react-native-switch';
-import {googleSignInwebClientId} from '../../Components/GoogleSignDetails'
+import {googleSignInwebClientId} from '../../Components/GoogleSignDetails';
 import CustomStatusBar from '../../Components/CustomStatusBar';
 import commonStyles from '../../Res/Styles';
 import {DotIndicator} from 'react-native-indicators';
@@ -189,7 +189,7 @@ const Home = props => {
   };
 
   //******************** Hit CheckDeviceToken Api *******************
-  const CheckDeviceTokenApi = async (userData) => {
+  const CheckDeviceTokenApi = async userData => {
     console.log(
       'ApiCall',
       constants.baseUrl +
@@ -258,7 +258,7 @@ const Home = props => {
   };
 
   //******************** Hit UpdateDeviceToken Api *******************
-  const UpadateDeviceTokenApi = async (userData) => {
+  const UpadateDeviceTokenApi = async userData => {
     let body = {
       user_id: userData.id,
       device_id: DeviceInfo.getUniqueId(),
@@ -412,7 +412,7 @@ const Home = props => {
         onPress: () => {
           //resetHome();
           // ScheduledLocalNotification();
-         LogoutApi();
+          LogoutApi();
         },
         style: 'default',
       },
@@ -494,10 +494,10 @@ const Home = props => {
   // Functions for Check Social
   const checkSocial = async () => {
     let isSignIn = await GoogleSignin.getCurrentUser();
-    console.log("isSignIn",isSignIn)
+    console.log('isSignIn', isSignIn);
     if (isSignIn !== null) signOut();
     let access = await AccessToken.getCurrentAccessToken();
-    console.log("isSignIn access fb",access)
+    console.log('isSignIn access fb', access);
     if (access !== null) fbLogout();
     resetHome();
   };
@@ -869,7 +869,7 @@ const Home = props => {
                   props.navigation.navigate('TermsCondition', {
                     action: 'term',
                     title: 'Term & condition',
-                  })
+                  });
                   // props.navigation.navigate('TermsCondition')
                 }}>
                 <Text style={styles.rowSubTxtStyle}>

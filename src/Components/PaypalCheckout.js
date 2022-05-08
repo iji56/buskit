@@ -66,7 +66,7 @@ const PaypalCheckout = props => {
     return false;
   };
 
-  const createTokenData = (key) => {
+  const createTokenData = key => {
     var details = {
       grant_type: 'client_credentials',
     };
@@ -79,14 +79,14 @@ const PaypalCheckout = props => {
     }
     formBody = formBody.join('&');
     // token api call
-    createToken(formBody,key);
+    createToken(formBody, key);
   };
 
   // getting paypal access token for transaction
-  const createToken = async (formData,authKey) => {
+  const createToken = async (formData, authKey) => {
     timeout(
       10000,
-      fetch('https://'+constants.paypalBaseUrl+'v1/oauth2/token', {
+      fetch('https://' + constants.paypalBaseUrl + 'v1/oauth2/token', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -155,7 +155,7 @@ const PaypalCheckout = props => {
     };
     timeout(
       10000,
-      fetch('https://'+constants.paypalBaseUrl+'v1/payments/payment', {
+      fetch('https://' + constants.paypalBaseUrl + 'v1/payments/payment', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -213,7 +213,9 @@ const PaypalCheckout = props => {
       10000,
       fetch(
         // 'https://api.paypal.com/v1/payments/payment/' +
-        'https://'+constants.paypalBaseUrl+'v1/payments/payment/' +
+        'https://' +
+          constants.paypalBaseUrl +
+          'v1/payments/payment/' +
           paymentId +
           '/execute',
         {
@@ -262,7 +264,8 @@ const PaypalCheckout = props => {
             responseJson.payer.payer_info.payer_id,
             'successful',
             JSON.stringify(responseJson),
-            responseJson.transactions[0].related_resources[0].sale.transaction_fee.value
+            responseJson.transactions[0].related_resources[0].sale
+              .transaction_fee.value,
           );
         }
       })
@@ -275,7 +278,13 @@ const PaypalCheckout = props => {
   };
 
   //******************** Hit Checkout Api *****************
-  const checkoutApi = async (id, payerId, status,transactionResponse,transactionFee) => {
+  const checkoutApi = async (
+    id,
+    payerId,
+    status,
+    transactionResponse,
+    transactionFee,
+  ) => {
     let data = {
       transaction_id: id,
       customer_id: payerId,
@@ -284,8 +293,8 @@ const PaypalCheckout = props => {
       amount: amount,
       status: status,
       payment_method: 'paypal',
-      transaction_response:transactionResponse,
-      transaction_fee:transactionFee,
+      transaction_response: transactionResponse,
+      transaction_fee: transactionFee,
     };
     if (noteDesc != '') {
       data.notes = noteDesc;

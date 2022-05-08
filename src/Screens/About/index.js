@@ -4,23 +4,19 @@ import {
   Text,
   Image,
   View,
-  FlatList,
   TouchableOpacity,
-  AsyncStorage,
+  ActivityIndicator,
   SafeAreaView,
 } from 'react-native';
-import styles from './styles';
-import Colors from '../../Res/Colors';
-import Strings from '../../Res/String';
+import WebView from 'react-native-webview';
 
-import CustomStatusBar from '../../Components/CustomStatusBar';
-import commonStyles from '../../Res/Styles';
-import {DotIndicator} from 'react-native-indicators';
-import Toast, {DURATION} from 'react-native-easy-toast';
-import {timeout, processResponse} from '../../Config/CommonFunctions';
-import constants from '../../Config/Constants';
+import styles from './styles';
 import I18n from '../../Config/I18n';
-import HTML from 'react-native-render-html';
+import Colors from '../../Res/Colors';
+import commonStyles from '../../Res/Styles';
+import constants from '../../Config/Constants';
+import CustomStatusBar from '../../Components/CustomStatusBar';
+import {timeout, processResponse} from '../../Config/CommonFunctions';
 
 const Home = props => {
   const [name, setName] = useState(I18n.t('cmsPage.about'));
@@ -28,9 +24,10 @@ const Home = props => {
 
   const [isLoading, setLoading] = useState(false);
   const toast = useRef(null);
+  const ref = useRef(null);
 
   useEffect(() => {
-    AboutUsApi();
+    // AboutUsApi();
   }, []);
 
   //******************** Hit AboutUs Api *******************
@@ -89,6 +86,18 @@ const Home = props => {
       });
   };
 
+  const ActivityIndicatorLoadingView = () => {
+    //making a view to show to while loading the webpage
+    return (
+      <View style={{...commonStyles.WebViewStyle, paddingBottom: 150}}>
+        <ActivityIndicator size="large" color={Colors.theme} />
+        <Text style={{...commonStyles.LoadingTextStyle, color: 'white'}}>
+          Loading...
+        </Text>
+      </View>
+    );
+  };
+
   return (
     <SafeAreaView style={styles.viewcontainer}>
       <CustomStatusBar color={Colors.theme} />
@@ -108,28 +117,25 @@ const Home = props => {
         <Text style={styles.titleText}>{name}</Text>
         <TouchableOpacity style={styles.backImageBack} />
       </View>
-      <View style={styles.viewStyle}>
-        <ScrollView
-          style={[styles.scrollContainer,{paddingHorizontal:15}]}
-          showsVerticalScrollIndicator={false}
-          bounces={false}
-          keyboardShouldPersistTaps={'handled'}
-          overScrollMode="never">
-          <Text style={styles.headText}>{'Our Story'}</Text>
-          <HTML style={styles.descText} html={desc} />
-          {/* <Text style={styles.descText}>{desc}</Text> */}
-        </ScrollView>
-      </View>
-      <Toast
-        ref={toast}
-        style={commonStyles.toastStyle}
-        textStyle={commonStyles.toastTextStyle}
+
+      <WebView
+        // Webview Refernce
+        ref={ref}
+        // Webview Style
+        style={commonStyles.WebViewStyle}
+        //Loading URL
+        source={{uri: 'https://busk-it.com/about-02/'}}
+        //Navigation Change Interface
+        // onNavigationStateChange={_onNavigationStateChange.bind(this)}
+        //Enable Javascript support
+        javaScriptEnabled
+        //For the Cache
+        domStorageEnabled
+        //View to show while loading the webpage
+        renderLoading={ActivityIndicatorLoadingView}
+        //Want to show the view or not
+        startInLoadingState
       />
-      {isLoading && (
-        <View style={commonStyles.loaderStyle}>
-          <DotIndicator color={Colors.theme} size={15} count={4} />
-        </View>
-      )}
     </SafeAreaView>
   );
 };
